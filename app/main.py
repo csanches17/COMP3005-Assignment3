@@ -1,5 +1,6 @@
 import getpass
 import psycopg
+from datetime import date
 
 db_password = None
 
@@ -118,15 +119,41 @@ if __name__ == "__main__":
             first_name = input("Enter first name: ")
             last_name = input("Enter last name: ")
             email = input("Enter email: ")
-            enrollment_date = input("Enter enrollment date (YYYY-MM-DD): ")
+
+            # Validate date before inserting
+            while True:
+                date_input = input("Enter enrollment date (YYYY-MM-DD): ").strip()
+
+                try:
+                    enrollment_date = date.fromisoformat(date_input)
+
+                    if enrollment_date.isoformat() != date_input:
+                        print("Invalid date format. Please use YYYY-MM-DD.")
+                        continue
+
+                    # Check if the date is in the future
+                    if enrollment_date > date.today():
+                        print("Enrollment date cannot be in the future. Please enter a valid date.")
+                        continue
+
+                    break # Valid date
+                except ValueError:
+                    print("Invalid date format. Please use YYYY-MM-DD.")
+
             addStudent(first_name, last_name, email, enrollment_date)
         elif choice == "3":
-            student_id = input("Enter student ID to update: ")
-            new_email = input("Enter new email: ")
-            updateStudentEmail(student_id, new_email)
+            try:
+                student_id = input("Enter student ID to update: ")
+                new_email = input("Enter new email: ")
+                updateStudentEmail(student_id, new_email)
+            except ValueError:
+                print("Student ID must be an integer.")
         elif choice == "4":
-            student_id = input("Enter student ID to delete: ")
-            deleteStudent(student_id)
+            try:
+                student_id = input("Enter student ID to delete: ")
+                deleteStudent(student_id)
+            except ValueError:
+                print("Student ID must be an integer.")
         elif choice == "5":
             print("Exiting the program.")
             break
