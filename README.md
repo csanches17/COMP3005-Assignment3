@@ -88,7 +88,7 @@ The application displays the following menu where you can select one of the opti
 4. Delete a student
 5. Exit
 
-4. Implemented Functions
+# 4. Implemented Functions
 
 * getAllStudents() - Retrieves all records from the students table and displays their information, ordered by student ID.
 
@@ -101,7 +101,7 @@ The application validates the enrollment date to ensure it follows the YYYY-MM-D
 
 All CRUD operations use SQL statements with parameters where input values are required. PostgreSQL errors are handled using Psycopg exceptions.
 
-5. Additional notes
+# 5. Additional notes
 * Email address field must be unique.
 * Student IDs are generated automatically and are not reused after deletion.
 * Enrollment date validation is stricter than the schema provided, which permits NULL dates.
