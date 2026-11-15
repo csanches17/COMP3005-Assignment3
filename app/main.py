@@ -29,7 +29,13 @@ def getAllStudents():
                 
                 print("\nList of Students:")
                 for student in students:
-                    print(student)
+                    student = list(student)
+
+                    # Convert the date object to YYYY-MM-DD.
+                    if student[4] is not None:
+                        student[4] = student[4].isoformat()
+
+                    print(tuple(student))
 
     except psycopg.Error as e:
         print(f"Error connecting to PostgreSQL: {e}")
@@ -134,6 +140,11 @@ if __name__ == "__main__":
                     # Check if the date is in the future
                     if enrollment_date > date.today():
                         print("Enrollment date cannot be in the future. Please enter a valid date.")
+                        continue
+
+                    # Reject unrealistically old enrollment dates.
+                    if enrollment_date < date(1900, 1, 1):
+                        print("Enrollment date cannot be before 1900-01-01.")
                         continue
 
                     break # Valid date

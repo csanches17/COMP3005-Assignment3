@@ -118,5 +118,4 @@ A quick video will demonstrate:
 
 The demonstration video is accessible using the link below.
 
-Video link: 
-
+Video link: https://drive.google.com/file/d/159KIXxSHymRZrLnQpHca2Pa8VNcZTyJk/view?usp=sharing
