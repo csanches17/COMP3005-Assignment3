@@ -143,14 +143,14 @@ if __name__ == "__main__":
             addStudent(first_name, last_name, email, enrollment_date)
         elif choice == "3":
             try:
-                student_id = input("Enter student ID to update: ")
+                student_id = int(input("Enter student ID to update: "))
                 new_email = input("Enter new email: ")
                 updateStudentEmail(student_id, new_email)
             except ValueError:
                 print("Student ID must be an integer.")
         elif choice == "4":
             try:
-                student_id = input("Enter student ID to delete: ")
+                student_id = int(input("Enter student ID to delete: "))
                 deleteStudent(student_id)
             except ValueError:
                 print("Student ID must be an integer.")

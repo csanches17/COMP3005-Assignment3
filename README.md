@@ -93,7 +93,7 @@ The application displays the following menu where you can select one of the opti
 * getAllStudents() - Retrieves all records from the students table and displays their information, ordered by student ID.
 
 * addStudent(first_name, last_name, email, enrollment_date) - Inserts a new student record. PostgreSQL automatically generates the student ID.
-The application validates the enrollment date to ensure it follows the YYYY-MM-DD format, represents a valid calendar date, and is not later than the current date. If an invalid date is entered, the applications prompts the user to re-enter the date without restarting the registration process.
+The application validates the enrollment date to ensure it follows the YYYY-MM-DD format, represents a valid calendar date, and is not later than the current date. If an invalid date is entered, the application prompts the user to re-enter the date without restarting the registration process.
 
 * updateStudentEmail(student_id, new_email) - Updates the email address of the student identified by the specific student ID. If not found, it will show a message saying that the student could not be found.
 
@@ -107,7 +107,7 @@ All CRUD operations use SQL statements with parameters where input values are re
 * Enrollment date validation is stricter than the schema provided, which permits NULL dates.
 * The application requests database password at runtime. Passwords are not stored.
 
-6. Video Demonstration
+# 6. Video Demonstration
 A quick video will demonstrate:
 * PostgreSQL database creation and initial data.
 * Retrieving all students.
