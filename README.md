@@ -24,8 +24,10 @@ The application uses Psycopg 3 for PostgreSQL connectivity and it has a command-
 
 ## 3.1 Download the project
 Open a terminal and execute:
+```bash
 git clone https://github.com/csanches17/COMP3005-Assignment3.git
 cd COMP3005-Assignment3
+```
 
 Alternatively, you can download the repository as a ZIP file and extract it.
 
